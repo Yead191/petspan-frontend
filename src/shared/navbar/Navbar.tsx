@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { MenuOutlined } from "@ant-design/icons";
 import Image from "next/image";
 import Link from "next/link";
-import { Drawer, ConfigProvider } from "antd";
+import { Drawer, ConfigProvider, Button } from "antd";
 import { usePathname } from "next/navigation";
 import navItems from "@/constants/navItem";
 
@@ -68,48 +68,40 @@ export default function Navbar() {
       >
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href={"/"} className="shrink-0 -mt-2">
+          <Link href={"/"} className="shrink-0 ">
             <Image
-              src="/logo 2.png"
-              alt="VIAJIA Logo"
+              src="/Logo.svg"
+              alt="Logo"
               width={180}
               height={80}
-              className="h-12 lg:h-14 w-fit"
+              draggable={false}
+              className="h-8 lg:h-14 w-fit"
             />
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center gap-8">
-            {navItems?.map((item, index) => (
-              <Link
-                key={index}
-                href={item.href}
-                className={`text-sm lg:text-xs 2xl:text-sm transition-all duration-300 ${
-                  item.href === pathname
-                    ? "relative font-semibold px-8 py-2 rounded-full text-white bg-primary backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
-                    : "text-[#000000] hover:text-primary"
-                }`}
-                style={{
-                  backdropFilter:
-                    item.href === pathname
-                      ? "blur(10px) saturate(120%)"
-                      : "none",
-                  WebkitBackdropFilter:
-                    item.href === pathname
-                      ? "blur(10px) saturate(120%)"
-                      : "none",
-                }}
-              >
-                {item.labelKey}
-              </Link>
-            ))}
-          </div>
-
           {/* Right Section - Language + Download + Menu */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 ">
+            <div className="hidden lg:flex gap-6">
+              {navItems?.map((item, index) => (
+                <Link
+                  key={index}
+                  href={item.href}
+                  className={`text-sm lg:text-xs 2xl:text-[16px] transition-all duration-300 ${
+                    item.href === pathname
+                      ? "relative font-semibold text-primary"
+                      : "text-[#000000]/80 hover:text-primary"
+                  }`}
+                >
+                  {item.labelKey}
+                </Link>
+              ))}
+            </div>
             {/* Download Button (Hidden on Small Devices) */}
-            <button className="cursor-pointer hidden lg:block bg-[#06825C] text-white px-6 py-2 rounded-full transition-colors text-base font-semibold">
-              Download App
+            <button className="cursor-pointer hidden lg:block bg-transparent text-primary px-6 py-2 rounded-full transition-colors text-base font-medium border border-primary/20">
+              Login
+            </button>
+            <button className="cursor-pointer hidden lg:block bg-primary text-white px-6 py-2 rounded-full transition-colors text-base font-medium">
+              Get Started
             </button>
 
             {/* Mobile Menu Icon */}
