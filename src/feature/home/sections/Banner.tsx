@@ -22,7 +22,7 @@ export default async function Banner() {
               More time with the{" "}
               <span className="italic font-thin">pets you love</span>
             </h1>
-            <Button className="mt-6 bg-[#320013]! hover:bg-[#320013]! text-white! font-medium! h-10! 2xl:h-12! rounded-full! lg:w-[200px]! lg:text-[16px]! tracking-wide!">
+            <Button className="mt-6 bg-[#320013]! hover:bg-[#320013]! border-0! text-white! font-medium! h-10! 2xl:h-12! rounded-full! lg:w-[200px]! lg:text-[16px]! tracking-wide!">
               Get Started
             </Button>
           </div>
