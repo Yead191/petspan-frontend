@@ -22,9 +22,9 @@ const features = [
 
 export default async function PetsWeLove() {
   return (
-    <section className="bg-[#F7EFDF]">
+    <section id="pets-love" className="bg-[#F7EFDF]">
       <div className="py-16 lg:py-24 md:min-h-screen flex flex-col items-center justify-center container">
-        <div className="text-center flex flex-col items-center justify-center pt-10 lg:pt-20">
+        <div className="text-center flex flex-col items-center justify-center ">
           <h1 className="text-primary text-4xl 2xl:text-6xl font-medium max-w-[400px] 2xl:max-w-[600px] text-center">
             More time with the{" "}
             <span className="italic font-thin">pets you love</span>
@@ -33,7 +33,7 @@ export default async function PetsWeLove() {
             Get Started
           </Button>
         </div>
-        <div className="mt-4 lg:mt-10 ">
+        <div className="mt-4 lg:mt-6 ">
           <Image
             src="/assets/images/home/pets-love.svg"
             alt="Banner Background"
