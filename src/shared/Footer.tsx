@@ -12,15 +12,15 @@ export default async function Footer() {
     { label: "Terms Condition", href: "/terms-condition" },
   ];
   return (
-    <footer className="pt-16 lg:pt-20 bg-[#E6F8F3] ">
+    <footer className="pt-16 lg:pt-20 bg-[#FFFFFF] ">
       <div className="container flex flex-col items-center justify-center">
         <Image
           src="/Logo.svg"
           alt="VIAJIA Logo"
-          width={400}
-          height={200}
+          width={1000}
+          height={600}
           draggable={false}
-          className="h-fit lg:h-52 w-fit mb-10"
+          className="h-fit w-full object-contain mb-10"
         />
         {/* Navigation Links */}
         <div className="flex flex-wrap gap-4 lg:gap-6 text-xs lg:text-sm text-black/80 mb-8 md:mb-10 items-center justify-center">

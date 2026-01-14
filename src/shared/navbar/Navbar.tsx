@@ -10,17 +10,12 @@ import navItems from "@/constants/navItem";
 export default function Navbar() {
   const pathname = usePathname();
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
   const lastScrollTop = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      const bannerHeight = document.getElementById("banner")?.offsetHeight || 0;
       const scrollY = globalThis.scrollY;
-      // console.log("scroll", scrollY);
-      // Change navbar background after banner
-      setIsScrolled(scrollY > bannerHeight - 80);
 
       // Hide/show logic
       if (scrollY > lastScrollTop.current && scrollY > 100) {
@@ -38,28 +33,10 @@ export default function Navbar() {
     // console.log("inside");
     return () => globalThis.removeEventListener("scroll", handleScroll);
   }, []);
-  useEffect(() => {
-    const handleScroll = () => {
-      const bannerHeight = document.getElementById("banner")?.offsetHeight || 0;
-      if (window.scrollY > bannerHeight - 80) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <nav
-      className={`fixed top-0  z-50 w-full transition-all duration-500 navbar-container 
-        ${
-          isScrolled
-            ? "bg-white mt-0"
-            : "bg-transparent lg:bg-transparent md:px-8 2xl:px-0  lg:backdrop-blur-none  "
-        }
+      className={`fixed top-0  z-50 w-full transition-all duration-500 navbar-container bg-white mt-0
         ${showNavbar ? "translate-y-0" : "-translate-y-28"}
       `}
     >

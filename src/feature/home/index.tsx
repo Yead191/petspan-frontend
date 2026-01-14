@@ -1,10 +1,10 @@
 import React from "react";
-import Banner from "./sections/Banner";
+import PetsWeLove from "./sections/PetsWeLove";
 
 export default async function HomePage() {
   return (
     <section>
-      <Banner />
+      <PetsWeLove />
     </section>
   );
 }
