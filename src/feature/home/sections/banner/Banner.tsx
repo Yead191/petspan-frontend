@@ -30,7 +30,7 @@ export default function Banner() {
             draggable={false}
             className="w-full lg:h-[400px] 2xl:h-[600px]  2xl:w-fit object-cover object-right "
           />
-          <ExploreButton targetId="pets-love" />
+          <ExploreButton targetId="cellular-level" />
         </div>
       </div>
     </section>
